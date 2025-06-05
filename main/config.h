@@ -8,6 +8,10 @@
 constexpr int pwmPinForward = 5;
 constexpr int pwmPinBackward = 9;
 
+// Управление тормозом руля
+constexpr int breakcontact1 = 5;
+constexpr int breakcontact2 = 9;
+
 // Управление акпп (стоп-сигнал)
 constexpr int stopA = 7;
 constexpr int stopB = 2;
