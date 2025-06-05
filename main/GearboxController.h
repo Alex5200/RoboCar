@@ -1,6 +1,3 @@
-#pragma once
-#include <Arduino.h>
-
 class GearboxController {
 public:
     enum class GearMode {
@@ -16,6 +13,7 @@ public:
     GearMode getCurrentGear() const;
     
     void setThresholds(int parkMax, int reverseMin, int reverseMax, int driveMin);
+    void setGear(GearMode gear); // Перемещено в public
 
 private:
     const int potPin_;
@@ -29,6 +27,4 @@ private:
     
     GearMode currentGear_ = GearMode::PARK;
     int lastRawValue_ = 0;
-    
-    void setGear(GearMode gear);
 };

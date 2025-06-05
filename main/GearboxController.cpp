@@ -1,4 +1,5 @@
 #include "GearboxController.h"
+#include <Arduino.h>
 
 GearboxController::GearboxController(int potPin, int pinA, int pinB)
     : potPin_(potPin), pinA_(pinA), pinB_(pinB) {}
@@ -48,24 +49,24 @@ void GearboxController::setGear(GearMode gear) {
     
     switch (gear) {
         case GearMode::PARK:
-            digitalWrite(pinA_, LOW);
-            digitalWrite(pinB_, LOW);
+            digitalWrite(pinA_, 0);
+            digitalWrite(pinB_, 0);
             break;
             
         case GearMode::REVERSE:
-            digitalWrite(pinA_, LOW);
-            digitalWrite(pinB_, HIGH);
+            digitalWrite(pinA_, 0);
+            digitalWrite(pinB_, 1);
             break;
             
         case GearMode::DRIVE:
-            digitalWrite(pinA_, HIGH);
-            digitalWrite(pinB_, LOW);
+            digitalWrite(pinA_, 1);
+            digitalWrite(pinB_, 0);
             break;
             
         case GearMode::UNKNOWN:
             // Безопасный режим - выключаем все
-            digitalWrite(pinA_, LOW);
-            digitalWrite(pinB_, LOW);
+            digitalWrite(pinA_, 0);
+            digitalWrite(pinB_, 0);
             break;
     }
 }
