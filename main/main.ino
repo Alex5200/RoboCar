@@ -4,13 +4,11 @@
 #include "StopController.h"
 #include "PIDController.h"
 #include "GearboxController.h"
-#include "BreakControl.h"
 
 // Инициализация объектов
 MotorController motor;
 StopController stopController;
 PIDController pid(Kp, Ki, Kd);
-BreakControl breakcar;
 GearboxController gearbox(GEARBOX_POT_PIN, GEARBOX_PIN_A, GEARBOX_PIN_B);
 
 // Переменные для управления
@@ -32,7 +30,7 @@ void setup() {
     );
     
     motor.begin(pwmPinForward, pwmPinBackward);
-    breakcar.begin(breakcontact1, breakcontact2);
+    // breakcar.begin(GEARBOX_PIN_A, GEARBOX_PIN_B);
     stopController.begin();
     pinMode(angleSensor, INPUT);
     
