@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../BackendProjects"
+		},
+		{
+			"name": "Robocross",
+			"path": "../../../PlatformIO/Projects/Robocross"
+		}
+	],
+	"settings": {}
+}

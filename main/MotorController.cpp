@@ -1,5 +1,5 @@
 #include "MotorController.h"
-
+#include <Arduino.h>
 MotorController::MotorController() {}
 
 void MotorController::begin(int pinForward, int pinBackward) {
